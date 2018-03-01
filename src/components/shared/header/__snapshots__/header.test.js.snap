@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render 1`] = `
+<header
+  className={undefined}
+>
+  <h1
+    className={undefined}
+  >
+    logo.title
+  </h1>
+</header>
+`;

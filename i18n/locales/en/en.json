@@ -1,0 +1,32 @@
+{
+  "translation": {
+    "pageNotFound": {
+      "message": "Page Not Found!!"
+    },
+    "booking": {
+      "legend": "Pickup and Dropoff locations",
+      "bookNow": "Gimme My Hooptie!",
+      "pickupDate": "When?",
+      "pickupTime": "Time?"
+    },
+    "pickup": {
+      "placeholder": "Your crib",
+      "label": "Grab spot"
+    },
+    "dropoff": {
+      "label": "Their pad",
+      "placeholder": "Your jam"
+    },
+    "header": {
+      "title": "Book My Hooptie Now, Son",
+      "subtitle": "Rides and Glides with Pride"
+    },
+    "logo": {
+      "title": "Book-My-Hooptie"
+    },
+    "footer": "Copyright 2018 Book My Hooptie.",
+    "actions": {
+      "edit": "Edit details"
+    }
+  }
+}

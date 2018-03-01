@@ -1,0 +1,15 @@
+{
+  "presets": ["env", "react", "stage-2"],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": {
+        "src": "./src",
+        "components": "./src/components",
+        "i18n": "./i18n",
+        "test": "./tests",
+        "utils": "./src/utils"
+      }
+    }]
+  ]
+}

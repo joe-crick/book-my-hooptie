@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render 1`] = `
+<div
+  className={undefined}
+>
+  <div>
+    <strong>
+      pickup.label
+    </strong>
+     
+    pickup
+  </div>
+  <div>
+    <strong>
+      dropoff.label
+    </strong>
+     
+    dropoff
+  </div>
+  <div>
+    <strong>
+      booking.pickupDate
+    </strong>
+     
+    date-time
+  </div>
+</div>
+`;

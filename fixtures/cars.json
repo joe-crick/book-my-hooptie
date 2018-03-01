@@ -1,0 +1,25 @@
+[{
+    "model": "Cadillac",
+    "make": "Coupe DeVille",
+    "level": "mid",
+    "passengers": "7",
+    "description": "The original Hooptie! Seats five comfortably, 7 if you share laps.",
+    "price": "31.25"
+},
+{
+    "model": "Chrysler",
+    "make": "Tourismo",
+    "level": "entry",
+    "passengers": "5",
+    "description": "Our economy number. Only seats 5, but it rides and glides...",
+    "price": "21.25"
+},
+{
+    "model": "Mercedes",
+    "make": "E-Series",
+    "level": "first",
+    "passengers": "4",
+    "description": "Sweet luxury.",
+    "price": "41.25"
+}
+]
