@@ -6,7 +6,7 @@ import { setPickup, setDropoff, setDate, setTime, getCars } from "./booking-acti
 
 class Home extends Component {
   componentDidMount() {
-    this.props.getCarsList(25);
+    this.props.getCarsList(5);
   }
 
   render() {

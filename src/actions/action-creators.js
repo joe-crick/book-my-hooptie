@@ -25,6 +25,7 @@ export const update = (field, payload) => {
  */
 export const asyncUpdate = asyncOp => (field, args) => async dispatch => {
   dispatch(isLoading(field, true));
+  dispatch(hasError(field, false));
   try {
     const payload = await asyncOp(args);
     dispatch(isLoading(field, false));
@@ -36,11 +37,12 @@ export const asyncUpdate = asyncOp => (field, args) => async dispatch => {
 
 /**
  * For computed updates---for example, an increment
+ * @param name
  * @param action
  * @return {function(*, *)}
  */
-export const action = action => (field, payload) => {
-  const type = createActionName(field, "ACTION");
+export const action = (name, action) => (field, payload) => {
+  const type = createActionName(field, name.toUpperCase());
   if (!reducers.hasOwnProperty(type)) {
     reducers[type] = action;
   }
