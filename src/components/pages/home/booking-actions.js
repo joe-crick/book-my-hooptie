@@ -1,4 +1,4 @@
-import { update, asyncUpdate, action } from "src/actions/action-creators";
+import { update, asyncUpdate, action, asyncAction } from "src/actions/action-creators";
 import { jobData } from "src/data/fake";
 
 /**
@@ -23,8 +23,20 @@ const fetchCars = asyncUpdate(
 const updatePickup = action("update", (state, pickup) => ({ ...state, pickup }));
 export const setPickup = pickup => updatePickup("pickup", pickup);
 
-// Named action methods
-export const setDropoff = dropoff => update("dropoff", dropoff);
+/**
+ * Async version of custom action
+ * @type {function(*=, *=): function(*)}
+ */
+const updateDropoff = asyncAction(
+  "update",
+  text => new Promise(resolve => setTimeout(() => resolve(text), 500)),
+  (state, dropoff) => ({ ...state, dropoff })
+);
+export const setDropoff = dropoff => updateDropoff("dropoff", dropoff);
+
+// Simple sync update methods
 export const setDate = date => update("date", date);
 export const setTime = time => update("time", time);
+
+// Simple async update
 export const getCars = query => fetchCars("cars", query);

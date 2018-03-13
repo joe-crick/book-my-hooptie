@@ -52,6 +52,26 @@ export const action = (name, action) => (field, payload) => {
   };
 };
 
+/**
+ * Like an action, but asynchronous
+ * @param name
+ * @param asyncOp
+ * @param task
+ * @return {function(*=, *=): function(*)}
+ */
+export const asyncAction = (name, asyncOp, task) => (field, args) => async dispatch => {
+  dispatch(isLoading(name, true));
+  dispatch(hasError(name, false));
+  const createdAction = action(name, task);
+  try {
+    const payload = await asyncOp(args);
+    dispatch(isLoading(name, false));
+    dispatch(createdAction(field, payload));
+  } catch (error) {
+    dispatch(hasError(name, error));
+  }
+};
+
 function createActionName(field, prefix = "SET") {
   return `${prefix}_${field.toUpperCase()}`;
 }
