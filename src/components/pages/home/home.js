@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import BookingHeader from "./booking-header/booking-header";
 import BookingForm from "components/shared/booking-form/booking-form";
-import { setPickup, setDropoff, setDate, setTime, getCars } from "./booking-actions";
+import * as actions from "./booking-actions";
+import { simplify } from "../../connected/Connected";
 
 class Home extends Component {
   componentDidMount() {
-    this.props.getCarsList(5);
+    this.props.getCars(5);
   }
 
   render() {
@@ -14,9 +15,9 @@ class Home extends Component {
       pickup,
       pickupDate,
       dropoff,
-      updatePickup,
-      updateDate,
-      updateDropoff,
+      setPickup,
+      setDate,
+      setDropoff,
       setTime,
       time,
       cars,
@@ -38,41 +39,15 @@ class Home extends Component {
           dropoff={dropoff}
           time={time}
           pickupDate={pickupDate}
-          updateDropoff={updateDropoff}
-          updatePickup={updatePickup}
-          updateDate={updateDate}
+          updateDropoff={setDropoff}
+          updatePickup={setPickup}
+          updateDate={setDate}
           updateTime={setTime}
         />
       </React.Fragment>
     );
   }
 }
+const stateMap = ["pickup", "dropoff", "pickupDate", "time", "cars", "cars_loading"];
 
-const mapStateToProps = ({ pickup, dropoff, pickupDate, time, cars, cars_loading }) => ({
-  pickup,
-  dropoff,
-  pickupDate,
-  time,
-  cars,
-  cars_loading
-});
-
-const matchDispatchToProps = dispatch => ({
-  updatePickup(event) {
-    dispatch(setPickup(event.target.value));
-  },
-  updateDropoff(event) {
-    dispatch(setDropoff(event.target.value));
-  },
-  updateDate(event) {
-    dispatch(setDate(event.target.value));
-  },
-  updateTime(event) {
-    dispatch(setTime(event.target.value));
-  },
-  getCarsList(count) {
-    dispatch(getCars(count));
-  }
-});
-
-export default connect(mapStateToProps, matchDispatchToProps)(Home);
+export default simplify(actions, stateMap)(Home);
