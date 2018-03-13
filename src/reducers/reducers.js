@@ -1,21 +1,17 @@
 import DEFAULT from "src/state/state";
-import bookingReducers from "components/pages/home/booking-reducers";
-import carSelectionReducers from "components/pages/car-selection/car-selection-reducers";
 
 const REDUX_INIT = "@@redux/INIT";
 
-const actions = {
-  [REDUX_INIT]: state => state,
-  ...bookingReducers,
-  ...carSelectionReducers
+export const reducers = {
+  [REDUX_INIT]: state => state
 };
 
 const rootReducer = (state = DEFAULT, action) => {
   const { type, payload } = action;
-  if (actions.hasOwnProperty(type)) {
-    return actions[type](state, payload);
+  if (reducers.hasOwnProperty(type)) {
+    return reducers[type](state, payload);
   } else {
-    throw new Error("Action not found");
+    throw new Error("Reducer not found");
   }
 };
 
