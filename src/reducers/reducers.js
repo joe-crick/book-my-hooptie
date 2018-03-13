@@ -5,7 +5,7 @@ import carSelectionReducers from "components/pages/car-selection/car-selection-r
 const REDUX_INIT = "@@redux/INIT";
 
 const actions = {
-  [REDUX_INIT]: (state, action) => state,
+  [REDUX_INIT]: state => state,
   ...bookingReducers,
   ...carSelectionReducers
 };

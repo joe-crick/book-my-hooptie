@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getCars } from "./car-selection-actions";
-import Cars from 'components/shared/car/car';
+import Cars from "components/shared/car/car";
 
 export class carSelection extends Component {
   componentDidMount() {
@@ -10,10 +10,11 @@ export class carSelection extends Component {
   }
 
   render() {
-    return (<div>
-      blah
-      <Cars/>
-  </div>);
+    return (
+      <div>
+        <Cars />
+      </div>
+    );
   }
 }
 
