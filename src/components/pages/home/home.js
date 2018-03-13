@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import BookingHeader from "./booking-header/booking-header";
 import BookingForm from "components/shared/booking-form/booking-form";
-import { setPickup, setDropoff, setDate, setTime, getJobs } from "./booking-actions";
+import { setPickup, setDropoff, setDate, setTime, getCars } from "./booking-actions";
 
 class Home extends Component {
   componentDidMount() {
-    this.props.getJobsList(25);
+    this.props.getCarsList(25);
   }
 
   render() {
@@ -18,11 +18,16 @@ class Home extends Component {
       updateDate,
       updateDropoff,
       setTime,
-      time
+      time,
+      cars
     } = this.props;
     return (
       <React.Fragment>
         <BookingHeader />
+        <div>
+          Cars:
+          <ul>{cars.map(car => <li key={car.id}>{car.companyName}</li>)}</ul>
+        </div>
         <BookingForm
           pickup={pickup}
           dropoff={dropoff}
@@ -38,11 +43,12 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ pickup, dropoff, pickupDate, time }) => ({
+const mapStateToProps = ({ pickup, dropoff, pickupDate, time, cars }) => ({
   pickup,
   dropoff,
   pickupDate,
-  time
+  time,
+  cars
 });
 
 const matchDispatchToProps = dispatch => ({
@@ -58,8 +64,8 @@ const matchDispatchToProps = dispatch => ({
   updateTime(event) {
     dispatch(setTime(event.target.value));
   },
-  getJobsList(count) {
-    dispatch(getJobs(count));
+  getCarsList(count) {
+    dispatch(getCars(count));
   }
 });
 
