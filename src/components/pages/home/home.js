@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import BookingHeader from "./booking-header/booking-header";
 import BookingForm from "components/shared/booking-form/booking-form";
-import { setPickup, setDropoff, setDate, setTime } from "./booking-actions";
+import { setPickup, setDropoff, setDate, setTime, getJobs } from "./booking-actions";
 
 class Home extends Component {
+  componentDidMount() {
+    this.props.getJobsList(25);
+  }
+
   render() {
     const {
       pickup,
@@ -53,6 +57,9 @@ const matchDispatchToProps = dispatch => ({
   },
   updateTime(event) {
     dispatch(setTime(event.target.value));
+  },
+  getJobsList(count) {
+    dispatch(getJobs(count));
   }
 });
 
