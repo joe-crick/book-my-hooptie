@@ -24,14 +24,14 @@ export const BookingForm = props => {
           label={translate("pickup.label")}
           name="pickup"
           placeholder={translate("pickup.placeholder")}
-          onChange={updatePickup}
+          onChange={event => updatePickup(event.target.value)}
           value={pickup}
         />
         <Autocomplete
           label={translate("dropoff.label")}
           name="dropoff"
           placeholder={translate("dropoff.placeholder")}
-          onChange={updateDropoff}
+          onChange={event => updateDropoff(event.target.value)}
           value={dropoff}
         />
       </fieldset>

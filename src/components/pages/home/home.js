@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import BookingHeader from "./booking-header/booking-header";
 import BookingForm from "components/shared/booking-form/booking-form";
 import * as actions from "./booking-actions";
