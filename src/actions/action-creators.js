@@ -1,10 +1,6 @@
 import "babel-polyfill";
 import { reducers } from "src/reducers/reducers";
 
-function createActionName(field, prefix = "SET") {
-  return `${prefix}_${field.toUpperCase()}`;
-}
-
 /**
  * Creates a simple update action---state field is updated to value
  * @param field
@@ -22,9 +18,20 @@ export const update = (field, payload) => {
   };
 };
 
+/**
+ * Simple async update action---state field is updated to a value
+ * @param asyncOp
+ * @return {function(*=, *=): function(*)}
+ */
 export const asyncUpdate = asyncOp => (field, args) => async dispatch => {
-  const payload = await asyncOp(args);
-  dispatch(update(field, payload));
+  dispatch(isLoading(field, true));
+  try {
+    const payload = await asyncOp(args);
+    dispatch(isLoading(field, false));
+    dispatch(update(field, payload));
+  } catch (error) {
+    dispatch(hasError(field, error));
+  }
 };
 
 /**
@@ -42,3 +49,15 @@ export const action = action => (field, payload) => {
     payload
   };
 };
+
+function createActionName(field, prefix = "SET") {
+  return `${prefix}_${field.toUpperCase()}`;
+}
+
+function isLoading(field, hasLoaded) {
+  return update(`${field}_loading`, hasLoaded);
+}
+
+function hasError(field, isError) {
+  return update(`${field}_error`, isError);
+}

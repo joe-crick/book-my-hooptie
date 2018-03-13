@@ -19,14 +19,19 @@ class Home extends Component {
       updateDropoff,
       setTime,
       time,
-      cars
+      cars,
+      cars_loading
     } = this.props;
     return (
       <React.Fragment>
         <BookingHeader />
         <div>
           Cars:
-          <ul>{cars.map(car => <li key={car.id}>{car.companyName}</li>)}</ul>
+          {cars_loading ? (
+            <h1>Cars loading...</h1>
+          ) : (
+            <ul>{cars.map(car => <li key={car.id}>{car.companyName}</li>)}</ul>
+          )}
         </div>
         <BookingForm
           pickup={pickup}
@@ -43,12 +48,13 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ pickup, dropoff, pickupDate, time, cars }) => ({
+const mapStateToProps = ({ pickup, dropoff, pickupDate, time, cars, cars_loading }) => ({
   pickup,
   dropoff,
   pickupDate,
   time,
-  cars
+  cars,
+  cars_loading
 });
 
 const matchDispatchToProps = dispatch => ({
