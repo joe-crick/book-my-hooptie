@@ -62,11 +62,11 @@ export const action = (name, action) => (field, payload) => {
 export const asyncAction = (name, asyncOp, task) => (field, args) => async dispatch => {
   dispatch(isLoading(name, true));
   dispatch(hasError(name, false));
-  const createdAction = action(name, task);
+  const actionToDispatch = action(name, task);
   try {
     const payload = await asyncOp(args);
     dispatch(isLoading(name, false));
-    dispatch(createdAction(field, payload));
+    dispatch(actionToDispatch(field, payload));
   } catch (error) {
     dispatch(hasError(name, error));
   }

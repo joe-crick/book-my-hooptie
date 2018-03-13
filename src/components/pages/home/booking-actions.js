@@ -1,16 +1,9 @@
 import { update, asyncUpdate, action, asyncAction } from "src/actions/action-creators";
 import { jobData } from "src/data/fake";
 
-/**
- * Wrap the asynchronous update in an asynchUpdate. This will return a redux thunk, as well as
- * automatically create values in the store for "_loading", and "_error". For example, given a field
- * "cars", asynchUpdate will create fields in the store for "cars_loading", and "cars_error". It will
- * also update these fields automatically.
- * @type {function(*=, *=): function(*)}
- */
-const fetchCars = asyncUpdate(
-  amount => new Promise(resolve => setTimeout(() => resolve(jobData(amount)), 3200))
-);
+// Simple sync update methods
+export const setDate = date => update("date", date);
+export const setTime = time => update("time", time);
 
 /**
  * Custom actions can be defined as below. You can pass any valid reducer into an action. The
@@ -34,9 +27,14 @@ const updateDropoff = asyncAction(
 );
 export const setDropoff = dropoff => updateDropoff("dropoff", dropoff);
 
-// Simple sync update methods
-export const setDate = date => update("date", date);
-export const setTime = time => update("time", time);
-
-// Simple async update
+/**
+ * Wrap the asynchronous update in an asynchUpdate. This will return a redux thunk, as well as
+ * automatically create values in the store for "_loading", and "_error". For example, given a field
+ * "cars", asynchUpdate will create fields in the store for "cars_loading", and "cars_error". It will
+ * also update these fields automatically.
+ * @type {function(*=, *=): function(*)}
+ */
+const fetchCars = asyncUpdate(
+  amount => new Promise(resolve => setTimeout(() => resolve(jobData(amount)), 3200))
+);
 export const getCars = query => fetchCars("cars", query);
