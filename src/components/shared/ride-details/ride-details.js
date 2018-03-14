@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import styles from "./ride-details.less";
 import { translate } from "react-i18next";
-import { connect } from "react-redux";
-import { setDate, setDropoff, setPickup, setTime } from "components/pages/home/booking-actions";
+import { bind } from "simpl-r";
+import * as actions from "components/pages/home/booking-actions";
 import ReadMode from "./read-mode/ride-details-read-mode";
 import BookingForm from "components/shared/booking-form/booking-form";
 
@@ -54,33 +53,12 @@ export class RideDetails extends Component {
             updateTime={setTime}
           />
         )}
-        <button onClick={this.toggleDisplay}>{translate('actions.edit')}</button>
+        <button onClick={this.toggleDisplay}>{translate("actions.edit")}</button>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ pickup, dropoff, dateTime }) => ({
-  pickup,
-  dropoff,
-  dateTime
-});
-
-const matchDispatchToProps = dispatch => ({
-  updatePickup(event) {
-    dispatch(setPickup(event.target.value));
-  },
-  updateDropoff(event) {
-    dispatch(setDropoff(event.target.value));
-  },
-  updateDate(event) {
-    dispatch(setDate(event.target.value));
-  },
-  updateTime(event) {
-    dispatch(setTime(event.target.value));
-  }
-});
-
 export const RideDetailsStory = translate()(RideDetails);
 
-export default connect(mapStateToProps, matchDispatchToProps)(RideDetailsStory);
+export default bind(["pickup", "dropoff", "dateTime"], actions)(RideDetailsStory);
