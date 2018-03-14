@@ -1,16 +1,9 @@
-import { action } from "src/actions/action-creators";
-import retry from "utils/retry";
+import { jobData } from "../../../data/fake";
+import { update, asyncUpdate } from "simpl-r";
 
-// Action names
-export const SET_CARS = "SET_CARS";
+export const setCars = cars => update("cars", cars);
 
-// Named action methods
-export const setCars = cars => action(SET_CARS, cars);
-
-export const getCars = carQuery => dispatch => {
-  retry(async function findCars() {
-    const response = await fetch("https://raw.githubusercontent.com/joe-crick/book-my-hooptie/master/fixtures/cars.json");
-    const data = await response.json();
-    dispatch(setCars(data));
-  });
-};
+const fetchCars = asyncUpdate(
+  amount => new Promise(resolve => setTimeout(() => resolve(jobData(amount)), 3200))
+);
+export const getCars = query => fetchCars("cars", query);

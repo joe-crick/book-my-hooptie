@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { getCars } from "./car-selection-actions";
+import * as actions from "./car-selection-actions";
+import { bind } from "simpl-r";
 import Cars from "components/shared/car/car";
 
 export class carSelection extends Component {
@@ -18,12 +18,4 @@ export class carSelection extends Component {
   }
 }
 
-const matchDispatchToProps = dispatch => ({
-  getMatchingVehicles(query) {
-    dispatch(getCars(query));
-  }
-});
-
-const mapStateToProps = ({}) => ({});
-
-export default connect(mapStateToProps, matchDispatchToProps)(carSelection);
+export default bind(["cars"], actions)(carSelection);

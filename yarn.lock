@@ -7854,6 +7854,14 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
+"simpl-r@https://github.com/joe-crick/simple-r.git":
+  version "0.0.1"
+  resolved "https://github.com/joe-crick/simple-r.git#2a3def5379be25235110feec384fac8062141be1"
+  dependencies:
+    react "^16.2.0"
+    react-redux "^5.0.7"
+    redux "^3.7.2"
+
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"

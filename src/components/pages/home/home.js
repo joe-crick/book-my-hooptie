@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import BookingHeader from "./booking-header/booking-header";
 import BookingForm from "components/shared/booking-form/booking-form";
 import * as actions from "./booking-actions";
-import { simplify } from "../../connected/Connected";
+import { bind } from "simpl-r";
 
 class Home extends Component {
   componentDidMount() {
@@ -49,4 +49,4 @@ class Home extends Component {
 }
 const stateMap = ["pickup", "dropoff", "pickupDate", "time", "cars", "cars_loading"];
 
-export default simplify(actions, stateMap)(Home);
+export default bind(stateMap, actions)(Home);
