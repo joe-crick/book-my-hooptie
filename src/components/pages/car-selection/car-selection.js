@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as actions from "./car-selection-actions";
-import { bind } from "simpl-r";
+import { connect } from "simpl-r";
 import Cars from "components/shared/car/car";
 
 export class carSelection extends Component {
@@ -18,4 +18,4 @@ export class carSelection extends Component {
   }
 }
 
-export default bind(["cars"], actions)(carSelection);
+export default connect(["cars"], actions)(carSelection);

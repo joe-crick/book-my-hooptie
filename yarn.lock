@@ -5425,6 +5425,10 @@ lodash.pick@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
 
+lodash.set@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
+
 lodash.some@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.some/-/lodash.some-4.6.0.tgz#1bb9f314ef6b8baded13b549169b2a945eb68e4d"
@@ -7856,8 +7860,9 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
 
 "simpl-r@https://github.com/joe-crick/simple-r.git":
   version "0.0.1"
-  resolved "https://github.com/joe-crick/simple-r.git#2a3def5379be25235110feec384fac8062141be1"
+  resolved "https://github.com/joe-crick/simple-r.git#b2fe503e7185489fca58d01da487c68b29483f85"
   dependencies:
+    lodash.set "^4.3.2"
     react "^16.2.0"
     react-redux "^5.0.7"
     redux "^3.7.2"

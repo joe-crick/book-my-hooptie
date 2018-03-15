@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { translate } from "react-i18next";
-import { bind } from "simpl-r";
+import { connect } from "simpl-r";
 import * as actions from "components/pages/home/booking-actions";
 import ReadMode from "./read-mode/ride-details-read-mode";
 import BookingForm from "components/shared/booking-form/booking-form";
@@ -61,4 +61,4 @@ export class RideDetails extends Component {
 
 export const RideDetailsStory = translate()(RideDetails);
 
-export default bind(["pickup", "dropoff", "dateTime"], actions)(RideDetailsStory);
+export default connect(["pickup", "dropoff", "dateTime"], actions)(RideDetailsStory);
