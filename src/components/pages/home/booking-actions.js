@@ -13,7 +13,8 @@ export const setTime = update("time");
  * multiple fields in your state.
  * @type {function(*, *)}
  */
-export const setPickup = action("pickup", value => value);
+// export const setPickup = action("pickup", value => value);
+export const setPickup = update("pickup");
 
 /**
  * Async version of custom action
