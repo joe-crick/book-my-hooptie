@@ -1,5 +1,5 @@
 import { jobData } from "../../../data/fake";
-import { update, asyncUpdate } from "simpl-r";
+import { update, asyncUpdate } from "simpl-r/actions";
 
 export const setCars = cars => update("cars", cars);
 

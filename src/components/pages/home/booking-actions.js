@@ -1,4 +1,4 @@
-import { update, asyncUpdate, action, asyncAction } from "simpl-r";
+import { update, asyncUpdate, action, asyncAction } from "simpl-r/actions";
 import { jobData } from "src/data/fake";
 
 // Simple sync update methods

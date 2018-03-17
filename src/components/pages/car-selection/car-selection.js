@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as actions from "./car-selection-actions";
-import { connect } from "simpl-r";
+import connect from "simpl-r/connect";
 import Cars from "components/shared/car/car";
 
 export class carSelection extends Component {

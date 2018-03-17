@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { translate } from "react-i18next";
-import { connect } from "simpl-r";
+import { connect } from "simpl-r/connect";
 import * as actions from "components/pages/home/booking-actions";
 import ReadMode from "./read-mode/ride-details-read-mode";
 import BookingForm from "components/shared/booking-form/booking-form";
