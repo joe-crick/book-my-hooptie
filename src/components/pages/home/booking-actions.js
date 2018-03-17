@@ -13,18 +13,21 @@ export const setTime = update("time");
  * multiple fields in your state.
  * @type {function(*, *)}
  */
-export const setPickup = action("pickup", (state, pickup) => ({ ...state, pickup }));
+export const setPickup = action("pickup", value => value);
 
 /**
  * Async version of custom action
  * @type {function(*=, *=): function(*)}
  */
-const updateDropoff = asyncAction(
-  "update",
-  text => new Promise(resolve => setTimeout(() => resolve(text), 500)),
-  (state, dropoff) => ({ ...state, dropoff })
+
+export const setDropoff = asyncAction(
+  "dropoff",
+  value => value,
+  event => {
+    const value = event.target.value;
+    return new Promise(resolve => setTimeout(() => resolve(value), 500));
+  }
 );
-export const setDropoff = dropoff => updateDropoff("dropoff", dropoff);
 
 /**
  * Wrap the asynchronous update in an asynchUpdate. This will return a redux thunk, as well as
@@ -33,6 +36,7 @@ export const setDropoff = dropoff => updateDropoff("dropoff", dropoff);
  * also update these fields automatically.
  * @type {function(*=, *=): function(*)}
  */
-export const getCars = asyncUpdate("cars",
+export const getCars = asyncUpdate(
+  "cars",
   amount => new Promise(resolve => setTimeout(() => resolve(jobData(amount)), 3200))
 );

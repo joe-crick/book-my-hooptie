@@ -31,7 +31,7 @@ export const BookingForm = props => {
           label={translate("dropoff.label")}
           name="dropoff"
           placeholder={translate("dropoff.placeholder")}
-          onChange={event => updateDropoff(event.target.value)}
+          onChange={updateDropoff}
           value={dropoff}
         />
       </fieldset>
