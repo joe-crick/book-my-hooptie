@@ -2,8 +2,8 @@ import { update, asyncUpdate, action, asyncAction } from "simpl-r/actions";
 import { jobData } from "src/data/fake";
 
 // Simple sync update methods
-export const setDate = date => update("date", date);
-export const setTime = time => update("time", time);
+export const setDate = update("date");
+export const setTime = update("time");
 
 /**
  * Custom actions can be defined as below. You can pass any valid reducer into an action. The
@@ -13,8 +13,7 @@ export const setTime = time => update("time", time);
  * multiple fields in your state.
  * @type {function(*, *)}
  */
-const updatePickup = action("update", (state, pickup) => ({ ...state, pickup }));
-export const setPickup = pickup => updatePickup("pickup", pickup);
+export const setPickup = action("pickup", (state, pickup) => ({ ...state, pickup }));
 
 /**
  * Async version of custom action
@@ -34,7 +33,6 @@ export const setDropoff = dropoff => updateDropoff("dropoff", dropoff);
  * also update these fields automatically.
  * @type {function(*=, *=): function(*)}
  */
-const fetchCars = asyncUpdate(
+export const getCars = asyncUpdate("cars",
   amount => new Promise(resolve => setTimeout(() => resolve(jobData(amount)), 3200))
 );
-export const getCars = query => fetchCars("cars", query);
