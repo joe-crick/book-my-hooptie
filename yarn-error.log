@@ -48,7 +48,6 @@ npm manifest:
       "react-router-relative-link": "^4.0.2",
       "redux": "^3.7.2",
       "redux-thunk": "^2.2.0",
-      "reduxigen": "",
       "regenerator-runtime": "^0.11.1"
     },
     "devDependencies": {
@@ -7454,7 +7453,7 @@ Lockfile:
   
   "reduxigen@https://github.com/joe-crick/Reduxigen.git":
     version "0.0.1"
-    resolved "https://github.com/joe-crick/Reduxigen.git#acd0925c1a6b572b22eaaf080c9c7217b5268d6d"
+    resolved "https://github.com/joe-crick/Reduxigen.git#c9a5a58a700f75ceed1162866d2fadd990bc4656"
     dependencies:
       lodash.get "^4.4.2"
       lodash.set "^4.3.2"
