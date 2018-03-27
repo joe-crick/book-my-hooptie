@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import BookingHeader from "./booking-header/booking-header";
 import BookingForm from "components/shared/booking-form/booking-form";
 import * as actions from "./booking-actions";
-import connect from "simpl-r/connect";
+import connect from "reduxigen/connect";
 
 class Home extends Component {
   componentDidMount() {

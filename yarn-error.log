@@ -1,5 +1,5 @@
 Arguments: 
-  /home/joe/.nvm/versions/node/v9.6.1/bin/node /home/joe/.nvm/versions/node/v9.6.1/bin/yarn add https://github.com/joe-crick/simple-r.git
+  /home/joe/.nvm/versions/node/v9.6.1/bin/node /home/joe/.nvm/versions/node/v9.6.1/bin/yarn remove reduxigen
 
 PATH: 
   /home/joe/.nvm/versions/node/v9.6.1/bin:/home/joe/.opam/system/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/joe/Programs/AAXtoMP3:/home/joe/Programs/node-debug
@@ -48,6 +48,7 @@ npm manifest:
       "react-router-relative-link": "^4.0.2",
       "redux": "^3.7.2",
       "redux-thunk": "^2.2.0",
+      "reduxigen": "",
       "regenerator-runtime": "^0.11.1"
     },
     "devDependencies": {
@@ -5492,6 +5493,10 @@ Lockfile:
     version "4.4.0"
     resolved "https://registry.yarnpkg.com/lodash.flattendeep/-/lodash.flattendeep-4.4.0.tgz#fb030917f86a3134e5bc9bec0d69e0013ddfedb2"
   
+  lodash.get@^4.4.2:
+    version "4.4.2"
+    resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  
   lodash.isarguments@^3.0.0:
     version "3.1.0"
     resolved "https://registry.yarnpkg.com/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
@@ -5519,6 +5524,10 @@ Lockfile:
   lodash.pick@^4.4.0:
     version "4.4.0"
     resolved "https://registry.yarnpkg.com/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
+  
+  lodash.set@^4.3.2:
+    version "4.3.2"
+    resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
   
   lodash.some@^4.6.0:
     version "4.6.0"
@@ -7442,6 +7451,14 @@ Lockfile:
       lodash-es "^4.2.1"
       loose-envify "^1.1.0"
       symbol-observable "^1.0.3"
+  
+  "reduxigen@https://github.com/joe-crick/Reduxigen.git":
+    version "0.0.1"
+    resolved "https://github.com/joe-crick/Reduxigen.git#acd0925c1a6b572b22eaaf080c9c7217b5268d6d"
+    dependencies:
+      lodash.get "^4.4.2"
+      lodash.set "^4.3.2"
+      react-redux "^5.0.7"
   
   regenerate@^1.2.1:
     version "1.3.3"
@@ -9383,31 +9400,10 @@ Lockfile:
       untildify "^3.0.2"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 1
-  Command: git
-  Arguments: pull
-  Directory: /home/joe/.cache/yarn/v1/.tmp/ac119a5dbd731f3da60a1aa6daff5d62
-  Output:
-  From https://github.com/joe-crick/simple-r
-   + 5f48426...ae91e26 master     -> origin/master  (forced update)
-  Auto-merging webpack.config.babel.js
-  CONFLICT (content): Merge conflict in webpack.config.babel.js
-  Auto-merging package.json
-  CONFLICT (content): Merge conflict in package.json
-  Auto-merging esm/connected/Connected.js
-  CONFLICT (content): Merge conflict in esm/connected/Connected.js
-  CONFLICT (rename/delete): dist/build.js deleted in HEAD and renamed to dist/index.js in ae91e26c4dcb35b83507ba2c10b4031e24902963. Version ae91e26c4dcb35b83507ba2c10b4031e24902963 of dist/index.js left in tree.
-  Auto-merging dist/connect.js
-  CONFLICT (add/add): Merge conflict in dist/connect.js
-  Auto-merging dist/actions.js
-  CONFLICT (add/add): Merge conflict in dist/actions.js
-  Automatic merge failed; fix conflicts and then commit the result.
-      at ProcessTermError.MessageError (/home/joe/.nvm/versions/node/v9.6.1/lib/node_modules/yarn/lib/cli.js:186:110)
-      at new ProcessTermError (/home/joe/.nvm/versions/node/v9.6.1/lib/node_modules/yarn/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/home/joe/.nvm/versions/node/v9.6.1/lib/node_modules/yarn/lib/cli.js:30281:17)
-      at ChildProcess.emit (events.js:127:13)
-      at maybeClose (internal/child_process.js:933:16)
-      at Socket.stream.socket.on (internal/child_process.js:353:11)
-      at Socket.emit (events.js:127:13)
-      at Pipe._handle.close [as _onclose] (net.js:550:12)
+  Error: This module isn't specified in a manifest.
+      at new MessageError (/home/joe/.nvm/versions/node/v9.6.1/lib/node_modules/yarn/lib/cli.js:186:110)
+      at Object.<anonymous> (/home/joe/.nvm/versions/node/v9.6.1/lib/node_modules/yarn/lib/cli.js:60445:15)
+      at Generator.next (<anonymous>)
+      at step (/home/joe/.nvm/versions/node/v9.6.1/lib/node_modules/yarn/lib/cli.js:98:30)
+      at /home/joe/.nvm/versions/node/v9.6.1/lib/node_modules/yarn/lib/cli.js:109:13
+      at <anonymous>

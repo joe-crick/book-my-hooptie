@@ -1,4 +1,4 @@
-import { update, asyncUpdate, action, asyncAction } from "simpl-r/actions";
+import { update, asyncUpdate, action, asyncAction } from "reduxigen/actions";
 import { jobData } from "src/data/fake";
 
 // Simple sync update methods

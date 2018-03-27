@@ -1,5 +1,5 @@
 import { jobData } from "../../../data/fake";
-import { update, asyncUpdate } from "simpl-r/actions";
+import { update, asyncUpdate } from "reduxigen/actions";
 
 export const setCars = cars => update("cars", cars);
 
