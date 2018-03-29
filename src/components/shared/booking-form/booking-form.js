@@ -2,7 +2,6 @@ import React from "react";
 import Autocomplete from "components/shared/autocomplete/autocomplete";
 import styles from "./booking-form.less";
 import { translate } from "react-i18next";
-import tempFunction from "utils/temp-function";
 
 export const BookingForm = props => {
   const {
@@ -14,6 +13,7 @@ export const BookingForm = props => {
     updateDate,
     updateDropoff,
     updateTime,
+    bookingAction,
     t: translate
   } = props;
   return (
@@ -52,7 +52,7 @@ export const BookingForm = props => {
         <input className={styles.input} type="time" onChange={updateTime} value={time} />
       </fieldset>
       <div className={styles.buttonContainer}>
-        <button className={styles.button} onClick={tempFunction}>
+        <button className={styles.button} onClick={bookingAction}>
           {translate("booking.bookNow")}
         </button>
       </div>

@@ -8,4 +8,12 @@ describe("Booking Form", () => {
     const actual = shallow(<BookingForm t={i18nMock} />);
     expect(actual).toBeDefined();
   });
+  it("should run the passed in function when book now is clicked", () => {
+    const expected = 1;
+    const mock = jest.fn();
+    const app = mount(<BookingForm t={i18nMock} bookingAction={mock} />);
+    app.find("button").simulate("click");
+    const actual = mock.mock.calls.length;
+    expect(actual).toEqual(expected);
+  });
 });

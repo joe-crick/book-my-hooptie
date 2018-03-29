@@ -3,11 +3,48 @@
     "pageNotFound": {
       "message": "Page Not Found!!"
     },
+    "general": {
+      "requiredFields": "Required Fields",
+      "title": "Title",
+      "mr": "Mr",
+      "ms": "Ms",
+      "dr": "Dr",
+      "prof": "Prof"
+    },
     "booking": {
       "legend": "Pickup and Dropoff locations",
       "bookNow": "Gimme My Hooptie!",
       "pickupDate": "When?",
       "pickupTime": "Time?"
+    },
+    "placeBooking": {
+      "passengerDetails": "Passenger Details",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "mobile": "Mobile",
+      "mobileNumberRequiredMessage": "You are required to have a working mobile phone at the time of pick-up.",
+      "rideDetails": "Ride details",
+      "childrenQuestion": "Traveling with children?",
+      "childrenTravelNote": "In this country, children are required by law to travel in appropriate child seats or restraints. Please specify below the number of children travelling and their ages, so we can inform our Service Provider. Please note: Child seats are on request and usually require 2 working days' notice.",
+      "commentsForDriver": "Notes for your driver",
+      "needReturn": "Return ride?",
+      "bookReturn": "Book your return now so you can relax later. If your plans change, you can cancel for free.",
+      "returnPickup": "Return pick-up location",
+      "returnDropoff": "Return drop-off location",
+      "addReturnButton": "Add my return journey",
+      "placeBooking": "Place booking"
+    },
+    "car": {
+      "passengers": "Passengers",
+      "luggage": "Luggage",
+      "terms": "Free cancellation up to 2 hours before pickup",
+      "includedInPrice": "Included in Price:",
+      "taxes": "Taxes, Service Charges and Gratuity",
+      "bookCar": "Book Hooptie!"
+    },
+    "carSelection": {
+      "loadingMessage": "Finding the perfect ride..."
     },
     "pickup": {
       "placeholder": "Your crib",

@@ -1,9 +1,9 @@
 import { update, asyncUpdate, action, asyncAction } from "reduxigen/actions";
-import { jobData } from "src/data/fake";
+import { carData } from "../../../data/fake";
 
 // Simple sync update methods
-export const setDate = update("date");
-export const setTime = update("time");
+export const setDate = update("pickupDate");
+export const setTime = update("pickupTime");
 
 /**
  * Custom actions can be defined as below. You can pass any valid reducer into an action. The
@@ -13,16 +13,14 @@ export const setTime = update("time");
  * multiple fields in your state.
  * @type {function(*, *)}
  */
-// export const setPickup = action("pickup", value => value);
-export const setPickup = update("pickup");
+export const setPickup = action("pickupLocation", value => value);
 
 /**
  * Async version of custom action
  * @type {function(*=, *=): function(*)}
  */
-
 export const setDropoff = asyncAction(
-  "dropoff",
+  "dropoffLocation",
   value => value,
   event => {
     const value = event.target.value;
@@ -39,5 +37,5 @@ export const setDropoff = asyncAction(
  */
 export const getCars = asyncUpdate(
   "cars",
-  amount => new Promise(resolve => setTimeout(() => resolve(jobData(amount)), 3200))
+  query => new Promise(resolve => setTimeout(() => resolve(carData(query.max)), 3200))
 );

@@ -1,9 +1,10 @@
 export default {
-  pickup: "",
-  dropoff: "",
+  pickupLocation: "",
+  dropoffLocation: "",
   pickupDate: "",
-  vehicle: {
-    vehicleClass: "",
+  pickupTime: "",
+  selectedCar: {
+    carClass: "",
     price: ""
   }
 };

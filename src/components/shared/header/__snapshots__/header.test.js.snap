@@ -4,10 +4,14 @@ exports[`Header should render 1`] = `
 <header
   className={undefined}
 >
-  <h1
-    className={undefined}
+  <a
+    href="/"
   >
-    logo.title
-  </h1>
+    <h1
+      className={undefined}
+    >
+      logo.title
+    </h1>
+  </a>
 </header>
 `;

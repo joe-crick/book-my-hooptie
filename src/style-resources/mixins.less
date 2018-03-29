@@ -41,12 +41,18 @@
 .button {
   background: @orange;
   color: @almost-white;
+  cursor: pointer;
   display: block;
   text-align: center;
   border: 0;
   width: 90%;
   padding: @surround-pad;
   font-weight: @bolder;
+
+  &:hover {
+    background: @dark-orange;
+  }
+
 }
 
 .hide {

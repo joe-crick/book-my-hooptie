@@ -1,0 +1,50 @@
+@import "../../../style-resources/mixins.less";
+
+.car {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid @light-gray;
+  margin: 20px;
+  padding: 20px;
+}
+
+.carImage {
+  height: 150px;
+  width: 200px;
+}
+
+.detailLabel {
+  margin-left: 5px;
+}
+
+.priceDetails {
+  & > div:first-child {
+    font-size: @large-font;
+  }
+  & > div:nth-child(2) {
+    font-size: @small-font;
+  }
+}
+
+@media all and (min-width: 480px) {
+  .car {
+    flex: 1 0 100%;
+  }
+
+  .priceDetails,
+  .carDetails {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 760px) {
+  .car {
+    flex: 1 0 30%;
+  }
+
+  .priceDetails,
+  .carDetails {
+    width: 30%;
+  }
+}

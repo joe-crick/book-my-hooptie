@@ -3,50 +3,44 @@ import BookingHeader from "./booking-header/booking-header";
 import BookingForm from "components/shared/booking-form/booking-form";
 import * as actions from "./booking-actions";
 import connect from "reduxigen/connect";
+import { translate } from "react-i18next";
 
 class Home extends Component {
-  componentDidMount() {
-    this.props.getCars(5);
-  }
+  navigateToCarList = event => {
+    event.preventDefault();
+    const base = this.props.i18n.language;
+    this.props.history.push(`/${base}/hoopties`);
+  };
 
   render() {
     const {
-      pickup,
+      pickupLocation,
+      dropoffLocation,
       pickupDate,
-      dropoff,
+      pickupTime,
       setPickup,
       setDate,
       setDropoff,
-      setTime,
-      time,
-      cars,
-      cars_loading
+      setTime
     } = this.props;
     return (
       <React.Fragment>
         <BookingHeader />
-        <div>
-          Cars:
-          {cars_loading ? (
-            <h1>Cars loading...</h1>
-          ) : (
-            <ul>{cars.map(car => <li key={car.id}>{car.companyName}</li>)}</ul>
-          )}
-        </div>
         <BookingForm
-          pickup={pickup}
-          dropoff={dropoff}
-          time={time}
+          pickup={pickupLocation}
+          dropoff={dropoffLocation}
           pickupDate={pickupDate}
+          time={pickupTime}
           updateDropoff={setDropoff}
           updatePickup={setPickup}
           updateDate={setDate}
           updateTime={setTime}
+          bookingAction={this.navigateToCarList}
         />
       </React.Fragment>
     );
   }
 }
-const stateMap = ["pickup", "dropoff", "pickupDate", "time", "cars", "cars_loading"];
+const stateMap = ["pickup", "dropoff", "pickupDate", "time"];
 
-export default connect(stateMap, actions)(Home);
+export default translate()(connect(stateMap, actions)(Home));

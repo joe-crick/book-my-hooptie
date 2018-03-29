@@ -1,9 +1,11 @@
-import { jobData } from "../../../data/fake";
-import { update, asyncUpdate } from "reduxigen/actions";
+import { carData } from "../../../data/fake";
+import { update, asyncUpdate, asyncAction } from "reduxigen/actions";
+import addCarDetails from "./add-car-details";
 
-export const setCars = cars => update("cars", cars);
+export const setSelectedCar = update("selectedVehicle");
 
-const fetchCars = asyncUpdate(
-  amount => new Promise(resolve => setTimeout(() => resolve(jobData(amount)), 3200))
+export const getCars = asyncAction(
+  "cars",
+  addCarDetails,
+  query => new Promise(resolve => setTimeout(() => resolve(carData(query.max)), 3200))
 );
-export const getCars = query => fetchCars("cars", query);
