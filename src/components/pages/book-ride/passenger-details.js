@@ -12,10 +12,12 @@ export const PassengerDetails = ({ t: translate }) => (
     </legend>
     <div>
       <span>
-        <label htmlFor="title">{translate("general.title")}</label>
+        <label className={styles.label} htmlFor="title">
+          {translate("general.title")}
+        </label>
       </span>
       <div>
-        <select id="title" name="title">
+        <select className={styles.select} id="title" name="title">
           <option value="Mr">{translate("general.mr")}</option>
           <option value="Ms">{translate("general.ms")}</option>
           <option value="Dr">{translate("general.dr")}</option>
@@ -23,7 +25,9 @@ export const PassengerDetails = ({ t: translate }) => (
         </select>
       </div>
       <span>
-        <label htmlFor="firstname">{translate("placeBooking.firstName")}</label>
+        <label className={styles.label} htmlFor="firstname">
+          {translate("placeBooking.firstName")}
+        </label>
       </span>
       <input
         className={styles.input}
@@ -34,7 +38,9 @@ export const PassengerDetails = ({ t: translate }) => (
         value=""
       />
       <span>
-        <label htmlFor="lastname">{translate("placeBooking.lastName")}</label>
+        <label className={styles.label} htmlFor="lastname">
+          {translate("placeBooking.lastName")}
+        </label>
       </span>
       <input
         className={styles.input}
@@ -45,7 +51,9 @@ export const PassengerDetails = ({ t: translate }) => (
         value=""
       />
       <span>
-        <label htmlFor="emailaddress">{translate("placeBooking.email")}</label>
+        <label className={styles.label} htmlFor="emailaddress">
+          {translate("placeBooking.email")}
+        </label>
       </span>
       <input
         className={styles.input}
@@ -56,7 +64,9 @@ export const PassengerDetails = ({ t: translate }) => (
       />
       <div>
         <span>
-          <label htmlFor="contactNumber">{translate("placeBooking.mobile")}</label>
+          <label className={styles.label} htmlFor="contactNumber">
+            {translate("placeBooking.mobile")}
+          </label>
         </span>
         <div>
           <a href="#" tabIndex="-1">

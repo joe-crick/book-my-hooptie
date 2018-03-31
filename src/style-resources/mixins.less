@@ -30,12 +30,28 @@
   border: @light-border
 }
 
-.input {
-  background-color: @almost-white;
-  padding: @input-pad;
-  width: 100%;
+.form-element {
+  background: @almost-white;
   border: @light-border;
   font-size: @regular-font;
+}
+
+.input {
+  .form-element();
+  padding: @input-pad;
+  width: 100%;
+}
+
+.select {
+  .form-element();
+  width: 30%;
+  height: 40px;
+}
+
+.textArea {
+  .form-element();
+  width: 100%;
+  height: 50px;
 }
 
 .button {
@@ -64,4 +80,10 @@
   justify-content: space-between;
   flex: 0 1 25%;
   flex-wrap: wrap;
+}
+
+@media all and (min-width: 760px) {
+  .select {
+    width: 10%;
+  }
 }

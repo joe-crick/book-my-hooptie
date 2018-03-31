@@ -33,7 +33,8 @@
       "returnPickup": "Return pick-up location",
       "returnDropoff": "Return drop-off location",
       "addReturnButton": "Add my return journey",
-      "placeBooking": "Place booking"
+      "placeBooking": "Place booking",
+      "rideDetailsPlaceholder": "e.g. child seat required, train number, flight number"
     },
     "car": {
       "passengers": "Passengers",

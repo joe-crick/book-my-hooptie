@@ -20,17 +20,18 @@ const RideDetails = ({ t: translate }) => (
       </div>
       <div>
         <span>
-          <label htmlFor="commentsForTheDriver">
+          <label className={styles.label} htmlFor="commentsForTheDriver">
             {translate("placeBooking.commentsForDriver")}
           </label>
         </span>
         <span>
           <textarea
+            className={styles.textArea}
             name="commentsForTheDriver"
             id="commentsForTheDriver"
             maxLength="500"
             rows="2"
-            placeholder="e.g. child seat required, train number, cruise name…"
+            placeholder={translate("placeBooking.rideDetailsPlaceholder")}
           />
         </span>
       </div>
