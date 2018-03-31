@@ -1,8 +1,9 @@
 import React from "react";
+import connect from "reduxigen/connect";
 import { translate } from "react-i18next";
 import styles from "./book-ride.less";
 
-export const ReturnRide = ({ t: translate }) => (
+export const ReturnRide = ({ pickupLocation, dropoffLocation, t: translate }) => (
   <fieldset className={styles.fieldset}>
     <legend className={styles.legend}>{translate("placeBooking.needReturn")}</legend>
     <div>
@@ -14,12 +15,14 @@ export const ReturnRide = ({ t: translate }) => (
           <li>
             <strong>
               <span>{translate("placeBooking.returnPickup")}</span>
-            </strong>Berlin Tegel Airport (TXL), Zufahrt zum Flughafen Tegel, 13405 Berlin, Germany
+            </strong>
+            {pickupLocation}
           </li>
           <li>
             <strong>
               <span>{translate("placeBooking.returnDropoff")}</span>
-            </strong>Traunsteiner Str., 10781 Berlin, Germany
+            </strong>
+            {dropoffLocation}
           </li>
         </ol>
         <button className={styles.button}>
@@ -30,4 +33,4 @@ export const ReturnRide = ({ t: translate }) => (
   </fieldset>
 );
 
-export default translate()(ReturnRide);
+export default translate()(connect(["pickupLocation", "dropoffLocation"])(ReturnRide));
