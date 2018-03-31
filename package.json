@@ -33,7 +33,7 @@
     "react-router-relative-link": "^4.0.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "reduxigen": "^0.0.2",
+    "reduxigen": "^0.0.3",
     "regenerator-runtime": "^0.11.1"
   },
   "devDependencies": {

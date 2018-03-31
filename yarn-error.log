@@ -23,10 +23,11 @@ npm manifest:
     "author": "Joe Crick",
     "license": "MIT",
     "scripts": {
-      "build:prod": "webpack --mode production",
-      "dev": "webpack-dev-server --progress --colors --mode development webpack.config.babel.js",
+      "build:prod": "webpack -p",
+      "dev": "webpack-dev-server --progress --colors -d webpack.config.babel.js",
       "format": "prettier --write \"./src/**/*.js\"",
-      "build": "npm-run-all format build:prod",
+      "copy-images": "copyfiles img/**/* dist/img",
+      "build": "run-s format build:prod copy-images",
       "copy-index": "copyfiles index.html dist",
       "test": "jest",
       "test:dev": "jest --watch",
@@ -5492,10 +5493,6 @@ Lockfile:
     version "4.4.0"
     resolved "https://registry.yarnpkg.com/lodash.flattendeep/-/lodash.flattendeep-4.4.0.tgz#fb030917f86a3134e5bc9bec0d69e0013ddfedb2"
   
-  lodash.get@^4.4.2:
-    version "4.4.2"
-    resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
-  
   lodash.isarguments@^3.0.0:
     version "3.1.0"
     resolved "https://registry.yarnpkg.com/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
@@ -5523,10 +5520,6 @@ Lockfile:
   lodash.pick@^4.4.0:
     version "4.4.0"
     resolved "https://registry.yarnpkg.com/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
-  
-  lodash.set@^4.3.2:
-    version "4.3.2"
-    resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
   
   lodash.some@^4.6.0:
     version "4.6.0"
@@ -7450,14 +7443,6 @@ Lockfile:
       lodash-es "^4.2.1"
       loose-envify "^1.1.0"
       symbol-observable "^1.0.3"
-  
-  "reduxigen@https://github.com/joe-crick/Reduxigen.git":
-    version "0.0.1"
-    resolved "https://github.com/joe-crick/Reduxigen.git#c9a5a58a700f75ceed1162866d2fadd990bc4656"
-    dependencies:
-      lodash.get "^4.4.2"
-      lodash.set "^4.3.2"
-      react-redux "^5.0.7"
   
   regenerate@^1.2.1:
     version "1.3.3"
