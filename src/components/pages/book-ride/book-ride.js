@@ -1,7 +1,7 @@
 import React from "react";
 import ReturnRide from "./return-ride";
 import PassengerDetails from "./passenger-details/passenger-details";
-import RideDetails from "./ride-details";
+import RideDetails from "./ride-details/ride-details";
 import styles from "./book-ride.less";
 import { translate } from "react-i18next";
 
