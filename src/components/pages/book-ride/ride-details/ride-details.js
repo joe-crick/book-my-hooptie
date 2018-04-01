@@ -37,9 +37,9 @@ const RideDetails = props => {
               maxLength="500"
               rows="2"
               placeholder={translate("placeBooking.rideDetailsPlaceholder")}
-              onChange={setComments}>
-              {props.driverComments}
-            </textarea>
+              value={props.driverComments}
+              onChange={setComments}
+            />
           </span>
         </div>
       </div>
